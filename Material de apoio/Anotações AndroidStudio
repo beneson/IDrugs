@@ -210,8 +210,8 @@ implements Parcelable{
 	public Student(Parcel parcel){
 		this.name = parcel.readString();
 		this.age = parcel.readInt();
-		this.image = parcel.readValue((Bitmap) Bitmap.class.getClassLoader());
-		this.team = parcel.readValue((Team) Team.class.getClassLoader());
+		this.image = (Bitmap) parcel.readValue(Bitmap.class.getClassLoader());
+		this.team = (Team) parcel.readValue(Team.class.getClassLoader());
 		this.disciplines = new ArrayList<Disciplines>();
 		parcel.readList(this.disciplines, Disciplines.class.getClassLoader());
 	}

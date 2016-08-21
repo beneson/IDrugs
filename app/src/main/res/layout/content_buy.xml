@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.beneson.idrugs.BuyActivity"
+    tools:showIn="@layout/activity_buy">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comprar"
+            android:id="@+id/buyButton"
+            android:onClick="comprar"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/nomeQuimicoBuy"
+            android:layout_toEndOf="@+id/nomeQuimicoBuy"
+            android:enabled="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Produto"
+            android:id="@+id/nomeProdutoBuy"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="67dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Nome Quimico"
+            android:id="@+id/nomeQuimicoBuy"
+            android:layout_marginTop="35dp"
+            android:layout_below="@+id/nomeProdutoBuy"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Estabelecimento"
+            android:id="@+id/estabelecimentoBuy"
+            android:layout_below="@+id/nomeQuimicoBuy"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Tempo de Entrega"
+            android:id="@+id/tempoEntregaBuy"
+            android:layout_below="@+id/buyButton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="41dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Preco"
+            android:id="@+id/precoBuy"
+            android:textSize="30dp"
+            android:layout_below="@+id/estabelecimentoBuy"
+            android:layout_alignLeft="@+id/nomeProdutoBuy"
+            android:layout_alignStart="@+id/nomeProdutoBuy" />
+
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/qtdBuy"
+            android:hint="01"
+            android:text="01"
+            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/precoBuy"
+            android:layout_alignEnd="@+id/precoBuy" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Quantidade:"
+            android:id="@+id/textView"
+            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/tempoEntregaBuy"
+            android:layout_alignEnd="@+id/tempoEntregaBuy" />
+
+    </RelativeLayout>
+</RelativeLayout>

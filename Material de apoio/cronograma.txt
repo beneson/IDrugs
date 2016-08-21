@@ -1,0 +1,14 @@
+Cronograma de Trabalho IDrugs
+
+- Geolocalização
+- Activity Pedido
+- Executar Pedido
+- Menu
+- Immplementação Usuário
+- Activity Configurações
+- Activity AcompanharPedido
+
+- Trabalho gráfico
+- Outras implementações
+
+- Versão Proprietário

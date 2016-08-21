@@ -1,0 +1,49 @@
+Fala Vitor.
+
+É o seguinte, comecei a fazer o mockup do iDrugs (que to pensando em mudar pra iMeds), mas vi que mais válido do que isso é te descrever o que eu to imaginando basicamente, pra você ter liberdade de trabalhar, a sua forma. Fiz só algumas anotações que passo em anexo, mas, em linhas gerais, lá vai.
+
+Primeiramente, fora Temer.
+
+Segundamente,baseei tudo pelo dashboard seguinte: https://colorlib.com/polygon/gentelella/index.html
+
+O esquema de cores já está estabelecido:
+Primária: #00BCD4
+Secundária: #FFC107
+
+Tendo como suporte: 
+Primária escura: #0097A7
+Primária clara: #B2EBF2
+
+O banco de dados que vou utilizar é o Firebase, Já te coloquei como colaborador; acho que enviei 2 convites diferentes, mas conta que o último é o que importa. Só algumas poucas classes foram criadas no Database, e isso é simples preguiça de fazer tudo a mão. Pode usar as mesmas nomenclaturas do projeto pra fazer os inserts.
+
+Os dados do app estão estruturados da seguinte forma https://www.gliffy.com/go/html5/10281637?app=1b5094b0-6042-11e2-bcfd-0800200c9a66. Acontece que o Firebase usa Json, então tem toda aquela diferença que você deve saber mais que eu. 
+
+Basciamente, preciso de 4 telas (até onde consigo pensar):
+
+Início - Dashboard2 - No widget, informações sobre número de pedidos ativos, e um link para Ver Pedidos, como na foto enviada. No gráfico, volume semanal de vendas. Ao invés de Top Profiles, Top Vendas, por produto. Se for muito trabalho, pode deixar estas informações desabilitadas, por enquanto.
+Abaixo, pode conter um quadro com as principais informações do estabelecimento (= farmácia), endereço, velocidade media, localização, avaliação, etc.
+
+Medicamentos - Additional Pages: Projects - Como na imagem, lista de classe Produtos. NomeComercial com o nomeQuimico abaixo, em fonte menor, Laboratório, Estoque, Preço unitário, e botões Editar e Excluir. Deve ter um widget para adicionar novos produtos, e outro para adicionar novas ofertas.
+
+Adicionar novos produtos - Forms: General Forms - Adicionar na classe Produto. Todas as informações da classe. Categoria e forma fisica são escolhidas por um combo box, e já tem alguns exemplos no Firebase. A mesmo tela já possui um outro quadro para adicionar nova oferta. Lembrando que os produtos são disponíveis para todas as farmácias, e, futuramente, deverão seguir esse banco de dados da anvisa http://www7.anvisa.gov.br/datavisa/consulta_produto/Medicamentos/frmConsultaMedicamentos.asp. No form também quero que tenha uma opção para adicionar a imagem do medicamento. Todas as imagens são guardadas no firebase, /produtos, e gostaria que, se possível, diminuísse a resolução de todas as imagens para 96x96.
+
+Adicionar novas ofertas - Forms: General Forms - Adicionar Ofertado, que nada mais é que um Produto com informações de Preço, Apresentação e Qtd apresentação (apresentação é, por exemplo, 3 capsulas, 1 caixa, 10 unidades, vidro com 1l). Pode ter um combobox, ou um elemento de pesquisa que retorne um produto já estabelecido. 
+
+Pedidos Ativos - Additional Pages: Contacts - Para pedidos ativos, quadros com informações de Pedidos, Usuário, Produto, endereço, forma de entrega, tudo o que for importante pra quem está de farmácia saber. 
+
+Pedidos Antigos - Tabble: Tabble Dynamics - As mesmas informações de cima, mas mais simplificadas. Tudo o que for de interesse do farmacêutico saber ou filtrar para pedidos antigos.
+Pedidos Ativos e Antigos podem ser submenus de um menu "Pedidos", na barra lateral.
+
+Contato - Contato com o Desenvolvedor (nós). To com preguiçã de pensar em como fazer isso, mas acho que pode ter uma caixa com opção pra email, outra com telefone, essas coisas.
+
+Bom, acho que por hoje é só. Qualquer coisa que achar melhor, pode lançar, dúvidas falar comigo, e mantém em foco o objetivo da página.
+
+Sem mais, 
+
+Att,
+
+-- 
+Beneson Corrêa Damasceno
+ Graduando em Engenharia de Produção - UFRJ
+ Estagiário em Engenharia - Departamento de Floresta Plantada - AIB/DEFLOP BNDES
+ (21) 99340-6787

@@ -1,0 +1,24 @@
+ANDROID STUDIO E PROGRAMAÇÃO
+	https://www.udemy.com/curso-completo-desenvolvedor-android/learn/#/
+	http://udgwebdev.com/teclas-de-atalho-essenciais-no-eclipse	
+	https://www.youtube.com/playlist?list=PLiGzvgwA5GmgWWz53L7mZdXnAV_eoT2DI&utm_content=educational&utm_campaign=2016-03-	15&utm_source=email-sendgrid&utm_term=9144708&utm_medium=647736
+Coleção de API's Google: 
+	https://console.developers.google.com/apis/library
+Appbar xDeveloper's guide
+	https://developer.android.com/training/appbar/action-views.html
+
+DESIGN
+	http://tableless.com.br/design-de-aplicativos-para-android-parte-1/
+	https://moqups.com/#!/edit/vitorinfocefet@gmail.com/KWVwVgiH
+	http://developer.android.com/intl/pt-br/design/index.html
+Material Design: 
+	https://www.google.com/design/spec/material-design/introduction.html
+Android Developer Blog: 
+	http://android-developers.blogspot.com.br/2014/10/appcompat-v21-material-design-for-pre.html
+Teste de paleta de cores para Material Design:
+	http://www.materialpalette.com/red/indigo
+
+FARMACOS
+Pesquisa de medicamentos
+	http://www7.anvisa.gov.br/datavisa/consulta_produto/Medicamentos/frmConsultaMedicamentos.asp
+	http://sngpc.anvisa.gov.br/ConsultaMedicamento/index.asp 

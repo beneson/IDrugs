@@ -1,0 +1,29 @@
+Descrição:
+
+O programa funciona como um sistema de entrega de produtos farmacêuticos.
+O usuário busca o produto a ser comprado, tem acesso a lista de estabelecimentos cadastrados, cada um com seu status de confiança, preço do produto, preço de entrega e tempo estimado de entrega. Escolhendo a melhor opção de compra, o usuário executa o pedido, e o sistema informa ao estabelecimento da ação de compra. O pagamento é feito diretamente com o atendente do estabelecimento, mas futuramente pode ser executado pelo próprio sistema a ser desenvolvido.
+O estabelecimento, por sua vez, precisa estar conectado com o sistema a ser desenvolvido, informando produtos, preços e quantidades no estoque, preço de entrega, localização, horário de funcionamento, forma de entrega (a pé, bicicleta, carro, etc).
+A forma de entrega pode variar por condições pré-estabelecidas (preço mínimo, distância, horário, etc).
+
+
+Aplicações:
+
+-Cliente:
+
+Objetos:
+
+Sistema
+Produto
+Estabelecimento
+Usuário
+Informações
+
+Pedido
+Compra
+
+
+Mockup:
+
+
+
+-Estabelecimento:

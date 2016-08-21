@@ -1,0 +1,300 @@
+﻿Shared Preference - útil para uso de variáveis primitivas em diversas Activitys, de forma protegida.
+ORMLite - facilita a manipulação de banco de dados do android - SQLite. Usa anottations
+SQLite - Banco de dados do Android.
+
+////////////////////////////////////////////////////////////
+
+SHARED PREFERENCE
+
+SharedPreferences.getSharedPreferences - acesso compartilhado pelo Context
+SharedPreferences.getPreferences - acesso compartilhado pela Activity
+MODE_PRIVATE - permite acesso apenas como privado
+
+/////////////////////////////////////////////////////////////
+
+Acessar imagem externa com RunOnUiThread
+
+private Bitmap img;
+
+protected void onCreate(Bundle savedInstanceState){
+	handler = new handler();
+}
+
+public void criaThread(View view){
+	new Thread(){
+		public void run(){
+		  try{
+		    URL url = new URL("http://xxxx/xxxx.png");
+		    HttpUrlConnection conexao = (HttpUrlConncetion) url.openConnection();
+		    InputStream input = conexao.getInputStream();
+		    img = BitmapFactory.decoderStream(input);
+		    }
+		  catch(IOException e){}
+		  
+		  handler.post(new Runnable(){
+		    public ovid run(){
+		      Imageview iv = (ImageView) findByViewId(R.id.imageview1);
+		      iv.setImageBitmap(img);
+		      }
+		    });
+		}
+	}.start();
+Pode-se substituir handler.post por runOnUiThread, sem necessidade de implementar o Handler.
+Funciona para threads principais principais.
+
+////////////////////////////////////////////////////////////
+
+ProgressDialog - Caixa de progresso
+ProgressDialog.setMessage("");
+ProgressDialog.show();
+ProgressoDialog.dismiss();
+
+////////////////////////////////////////////////////////////
+
+extends AsyncTask<...>
+
+onPreExecute()
+doInBackground()
+onProgressUpdate()
+onPostExecute()
+
+////////////////////////////////////////////////////////////
+
+android:onClick="chamaNavegador"
+public void chamaNavegador(View view){
+	Intent intent = new Intent(Intent.ACTION_VIEW);
+	intent.setData(Uri.parse(http://google.com))
+	}
+
+///////////////////////////////////////////////////////////
+
+getBaseContext()
+
+///////////////////////////////////////////////////////////
+
+android:layout_widht="0dp"
+android:layout_weight="n"
+
+
+///////////////////////////////////////////////////////////
+
+public class Fragment1 extends Fragment{
+
+	@override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+		View view = inflater.inflate(R.layout.layout_xx, null[container]);
+		TextView tv = (TextView) view.findByViewId(R.id.xxxx);
+		[se view instanciado] => getView()
+		tv.setText("xxxxxxxx");
+		return view;
+	}
+}
+
+public class MainActivity extends FragmentActivity{
+	FragmentManager fm = getSupportFragmentManager();
+	
+	@override
+	protected void onCreate (Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.id.activity_main);
+		
+		FragmentTransaction.replace();
+		FragmentTransaction.addToBackStack("qualquer coisa").
+		FramentTransaction.commit();
+		
+		String[] lista = new String[]{....};
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.xxxx, lista);
+		ListView lv = (ListView) findViewById(R.id.listview1);
+		lv.setAdapter(adapter);
+		lv.setOnItemClickListener(new onItemClickListener){
+		
+			public void onItemClick(AdapterView<?> lv, View view, int position, long id){
+				if (position==...){
+					Fragment1 fragment = (Fragment1) fn.findFragmentById[Tag](R.id.fragment1);
+					
+				}
+			
+			}
+		}
+	}
+}
+
+///////////////////////////////////////////////////////////
+
+http://www.materialpalette.com/indigo/amber
+
+///////////////////////////////////////////////////////////
+
+Chamadas Activity - https://developer.android.com/reference/android/app/Fragment.html
+Chamada de funções pesadas, acesso a servidor - onActivityCreated()
+
+setRetainState(true) - passa por todos os métodos, exceto onCreate()  funciona em qualquer método on [no lugar do onSaveInstanceState()]
+
+CustomDialogFragment extends DialogFragment(){
+
+[
+	dismiss(); OU
+	((MainActivity) getActivity()).turnOffDialogFragment();   ]
+	
+	public void onCreate(){
+		style = DialogFragment.STYLE_NORMAL [OU STYLE_NO_INPUT OU STYLE_NO_FRAME OU STYLE_NO_TITLE];
+		theme = android.R.style.Theme_Holo_Light [OU Theme_Holo_Dialog OU Theme_Holo_Light_DarkActionBar]
+		setStyle(style, theme); [só funciona pra onCreateDialog]
+		setCancelable(true [ou false]);
+	}
+	
+	public void onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+		super.on...
+		View view = inflater.inflate(R.layout.Loading_Layout, container);
+		return view;
+	}
+	
+	OU
+	
+	publid Dialog onCreateDialog(Bundle savedInstanceState){
+		super.onCreateDilago(savedInstanceState);
+		AlertDialog alert = new AlertDialog.Builder(getActivity()).setTitle("DialgoFragment").setIcon(R.drawable.xxx)
+		.setPositiveButton("Ok", new DialogInterface.OnClickListener()...)
+		.setNegativeButton("Sair", new DialogInterface.OnClickListener()...);
+		return(alert.show());
+	}
+	
+	public void onActivityCreated(Bundle savedInstanceState){
+		super...
+		getDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+	}
+}
+
+MainActivity extends FragmentActivity{
+
+	public void openDialogFragment(View view){
+		FragmentTransaction ft = getSupportFragmentManager().beginTrasnaction();
+		CustomDialogFrament cdf = new CustomDialogFragment();
+		cdf.show(ft, "dialog");
+	}
+		
+	public void turnOffDialogFragment(){
+		FragmentTransaction ft = getSupportFragmentManager().beginTrasnaction();
+		CustomDialogFrament cdf = (CustomDialogFragment)getSupportFragmentManager().findFragmentTag("dialog");
+		if(cdf != null){
+			cdf.dismiss();
+			ft.remove(cdf);
+		}
+	}
+}
+
+//////////////////////////////////////
+
+LinearLayout
+	orientation
+	gravity:  center/bottom/right
+	Componentes
+		layout_gravity: só funciona pra orientação que não a do LinearLayout pai
+		layout_weight: peso 1, completa tela
+		
+		
+/////////////////////////////////////
+
+PARCELABLE
+
+implements Parcelable{
+	
+	public void writeToParcel(Parcel dest, int flags){
+		dest.writeString(name);
+		dest.writeInt(age);
+		dest.writeValue(image);
+		dest.writeValue(Team);
+		dest.writeList(disciplines);
+	}
+	
+	public Student(Parcel parcel){
+		this.name = parcel.readString();
+		this.age = parcel.readInt();
+		this.image = parcel.readValue((Bitmap) Bitmap.class.getClassLoader());
+		this.team = parcel.readValue((Team) Team.class.getClassLoader());
+		this.disciplines = new ArrayList<Disciplines>();
+		parcel.readList(this.disciplines, Disciplines.class.getClassLoader());
+	}
+	
+	public static final Parcelable.Creator<Student> CREATOR = new parcelable.Creator<Student>(){
+	
+	public Student createFromParcel(Parcel source){
+		return new Student(source);
+	}
+	
+	public Student[] newArray(int size){
+		return new Student[size];
+	}
+}
+
+onCreate(){
+	Intent intent = new Intent(this, ClassXX.class);
+	intent.puParcelableArrayListExtra("students", students);
+	startActivity(intent);
+}
+
+onCreate(){
+	Students students = getIntent().getParcelableArrayListExtra("students");
+}
+
+////////////////////////////////////////
+
+ONSAVEINSTANCESTATE
+
+protected void onCreate(Bundle savedInstanceState){
+	super.onCreate(savedInstanceState);
+	
+	if(savedInstanceState != null){
+		ListImgs li = (LisImgs) savedInstanceState.getSerilizable(ListImgs.KEY);
+		image = li.imgs;
+	}
+	
+	if(imgs == null || imgs.size()==0) loadImgs();
+	else buildImgs();
+}
+
+protected void onSaveInstance(Bundle bundle){
+	super.onSaveInstanceState(bundle);
+	
+	bundle.putSerializable(ListImgs.KEY, new ListImgs(imgs));
+}
+
+
+public class ListImgs impements Serializable[
+
+	public ArrayList<Img> imgs; [VER SERIALIZABLE COM BITMAP]
+	public static final String KEY = "imagens";
+	
+	public ListImgs(ArrayList<Img> imgs){
+		this.imgs = imgs;
+	}
+}
+
+/////////////////////////////////////////
+
+SERIALIZABLE COM BITMAP
+
+public class Img implements Serializable{
+	private static final long serialVersionUID = 569994546546546L;
+	public Bitmap bitmap;
+	
+	public Img(Bitmap bitmap){
+		this.bitmap = bitmap;
+	}
+	
+	private void writeObject(ObjectOutputStream out) throws IOException {
+		ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+		bitmap.compress(Bitmap.CompressFormat.PNG, 0, byteStream);
+		byte bitmapBytes[] = byteStream.toByteArray();
+		out.write(bitmapBytes, 0, bitmapBytes.length);
+	}
+
+	private void readObject(ObjectInputStream in) throws IOException {
+		ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+		int b;
+		while((b = in.read()) != -1)
+			byteStream.write(b);
+		byte bitmapBytes[] = byteStream.toByteArray();
+		bitmap = BitmapFactory.decodeByteArray(bitmapBytes, 0, bitmapBytes.length);
+	}
+}

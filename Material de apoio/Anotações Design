@@ -1,0 +1,95 @@
+TEXT OPACITY
+
+Dark text (#000000)                   Opacity
+Primary text                          87%
+Secondary text                        54%
+Disabled text, hint text, and icons   38%
+Dividers                              12%
+
+Light text (#FFFFFF)                  Opacity
+Primary text                          100%
+Secondary text                        70%
+Disabled text, hint text, and icons   50%
+Dividers                              12%
+
+
+THEMES
+
+1. Status Bar     300     #E0E0E0
+2. App Bar        100     #F5F5F5
+3. BackGround     50      #FAFAFA
+4. Crds/Dialog    0       #FFFFFF
+
+
+ICONS
+
+Sizing
+
+Product icons are 48dp, with 1dp edges
+System icons are 24dp
+2dp for strokes, corner radius
+48DP for touch target
+
+Opacity     Icon      Background color
+54%     Active icon       Light
+26%    Inactive icon      Light
+100%    Active icon       Dark
+30%    Inactive icon      Dark
+
+
+TYPOGRAPHY
+
+Roboto - standard font
+Headline: Regular 24sp
+App bar, Title: Title style, Medium 20sp
+Subheading: Regular 16sp (device), 15sp (desktop)
+Buttons, Body 2: Medium 14sp, all caps
+Body 1: Regular 14sp
+Body 1: Regular 14sp (device), 13sp (desktop)
+Display 1 (Black 54%): Regular 34sp
+                       Regular 45sp
+                       Regular 56sp
+                       Regular 112sp
+           
+Text contrast ratios:  Minimum: 4.5:1  | Preferred: 7:1
+
+style_typography.png
+
+
+METRICS AND KEYLINES        
+
+Status Bar: 24dp
+Toolbar: 56dp
+Subtitle: 48dp
+List item: 72dp
+Screen edge left and right margins: 16dp
+Content left margin from screen edge: 72dp
+Space between content areas: 8dp
+
+These aspect ratios are recommended: 16:9 | 3:2 | 4:3 | 1:1 | 3:4 | 2:3
+
+
+ELEVATION
+
+Elevation (dp)    Component
+24                Dialog | Picker
+16                Nav drawer | Right drawer | Modal bottom Sheet
+12                Floating action button (FAB - pressed)
+9                 Sub menu (+1dp for each sub menu)
+8                 Bottom navigation bar | Menu | Card (when picked up) | Raised button (pressed state)
+6                 Floating action button (FAB - resting elevation) | Snackbar
+4                 App Bar
+3                 Refresh indicator | Quick entry / Search bar (scrolled state)
+2                 Card (resting elevation) | Raised button (resting elevation) | Quick entry / Search bar (resting elevation)
+1                 Switch
+
+STRUCTURE
+
+Side nav: Width = Screen width − 56 dp
+App Bar Metrics.png
+
+COMPONENTS
+
+Buttons: Capitalized, 36dp height, font Medium 14sp, Corner 2dp, 8dp padding 
+
+https://material.google.com/resources/sticker-sheets-icons.html#

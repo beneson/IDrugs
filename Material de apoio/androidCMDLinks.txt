@@ -1,0 +1,5 @@
+http://developer.android.com/intl/pt-br/tools/building/building-cmdline.html
+
+http://developer.android.com/intl/pt-br/tools/projects/projects-cmdline.html
+
+http://developer.android.com/intl/pt-br/tools/workflow/index.html
